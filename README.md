@@ -2,6 +2,12 @@
 
 Static personal introduction website for Kevin Shao.
 
+## Live Website
+
+Visit the public website here:
+
+https://pineapplekshao.github.io/KevinShao-Introduction-Website/
+
 ## Local Preview
 
 Open `index.html` directly in a browser, or run:
@@ -15,17 +21,3 @@ Then visit `http://localhost:8000`.
 ## GitHub Pages
 
 GitHub Pages can host this website for free because it is a static site: HTML, CSS, JavaScript, images, and PDFs.
-
-After pushing this folder to a GitHub repository:
-
-1. Open the repository on GitHub.
-2. Go to **Settings > Pages**.
-3. Set **Source** to **Deploy from a branch**.
-4. Choose the `main` branch and `/ (root)`.
-5. Save.
-
-The site will be available at a URL like:
-
-```text
-https://USERNAME.github.io/REPOSITORY/
-```
