@@ -1,4 +1,6 @@
-const revealTargets = document.querySelectorAll(".timeline-item, .publication-list article, .teaching-band, .contact-section");
+const revealTargets = document.querySelectorAll(
+  ".profile-section, .timeline-item, .method-grid article, .skills-matrix article, .publication-list article, .teaching-band, .contact-section"
+);
 
 const observer = new IntersectionObserver(
   entries => {

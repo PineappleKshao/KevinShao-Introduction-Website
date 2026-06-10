@@ -295,14 +295,19 @@ h3 {
 }
 
 .panel-card,
+.signal-card,
+.terminal-card,
 .timeline-item,
-.publication-list article {
+.publication-list article,
+.skills-matrix article,
+.method-grid article {
   border: 1px solid var(--line);
   background: linear-gradient(145deg, var(--panel-strong), rgba(255, 255, 255, 0.035));
   backdrop-filter: blur(14px);
 }
 
-.panel-card {
+.panel-card,
+.signal-card {
   display: grid;
   gap: 6px;
   max-width: 380px;
@@ -310,8 +315,56 @@ h3 {
   box-shadow: 12px 12px 0 rgba(255, 255, 255, 0.055);
 }
 
+.signal-card {
+  max-width: 480px;
+  padding: 24px;
+}
+
+.signal-card p {
+  margin-bottom: 0;
+  color: var(--white);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.25;
+}
+
 .panel-card:nth-of-type(2) {
   justify-self: end;
+}
+
+.hero-panel .panel-card:last-child {
+  justify-self: end;
+}
+
+.terminal-card {
+  max-width: 560px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.terminal-bar {
+  display: flex;
+  gap: 8px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.terminal-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--soft);
+}
+
+.terminal-card pre {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.78rem, 1.25vw, 0.98rem);
+  line-height: 1.7;
 }
 
 .metric,
@@ -330,6 +383,7 @@ h3 {
 .quick-strip div {
   display: grid;
   gap: 8px;
+  min-width: 0;
   min-height: 142px;
   align-content: center;
   padding: 28px clamp(18px, 4vw, 44px);
@@ -343,8 +397,30 @@ h3 {
 }
 
 .quick-strip span {
+  display: block;
   color: #2d2d2d;
   line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.profile-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1fr);
+  gap: clamp(28px, 6vw, 82px);
+  padding: clamp(66px, 9vw, 120px) clamp(18px, 5vw, 80px);
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.profile-copy p {
+  margin-bottom: 0;
+  color: var(--soft);
+  font-size: clamp(1.14rem, 2vw, 1.48rem);
+  line-height: 1.55;
 }
 
 .section-grid {
@@ -365,13 +441,17 @@ h3 {
 }
 
 .timeline,
-.publication-list {
+.publication-list,
+.skills-matrix,
+.method-grid {
   display: grid;
   gap: 18px;
 }
 
 .timeline-item,
-.publication-list article {
+.publication-list article,
+.skills-matrix article,
+.method-grid article {
   position: relative;
   padding: clamp(22px, 4vw, 34px);
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
@@ -379,7 +459,9 @@ h3 {
 }
 
 .timeline-item::before,
-.publication-list article::before {
+.publication-list article::before,
+.skills-matrix article::before,
+.method-grid article::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -391,7 +473,9 @@ h3 {
 }
 
 .timeline-item:hover,
-.publication-list article:hover {
+.publication-list article:hover,
+.skills-matrix article:hover,
+.method-grid article:hover {
   border-color: var(--line-strong);
   background: rgba(255, 255, 255, 0.105);
   transform: translateY(-3px);
@@ -399,6 +483,8 @@ h3 {
 
 .timeline-item p,
 .publication-list p,
+.skills-matrix p,
+.method-grid p,
 .teaching-band p,
 .contact-section p {
   color: var(--soft);
@@ -430,6 +516,24 @@ h3 {
     #111;
 }
 
+.teaching-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.method-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.method-grid article span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
 .chips {
   display: flex;
   grid-column: 2;
@@ -456,6 +560,10 @@ h3 {
   font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.skills-matrix {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .contact-section {
@@ -514,6 +622,7 @@ footer {
   }
 
   .hero,
+  .profile-section,
   .section-grid,
   .teaching-band,
   .contact-section {
@@ -546,6 +655,15 @@ footer {
   .chips {
     grid-column: auto;
   }
+
+  .method-grid,
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel .panel-card:last-child {
+    justify-self: start;
+  }
 }
 
 @media (max-width: 560px) {
@@ -561,8 +679,8 @@ footer {
 
   .hero-copy,
   .hero-panel {
-    width: 100%;
-    max-width: 100%;
+    width: calc(100vw - 96px);
+    max-width: calc(100vw - 96px);
   }
 
   .nav-links {
@@ -575,6 +693,10 @@ footer {
 
   .nav-links a {
     min-width: calc(50% - 10px);
+  }
+
+  .quick-strip span {
+    max-width: 24ch;
   }
 
   .eyebrow,
@@ -592,7 +714,22 @@ footer {
   }
 
   h2 {
-    font-size: 2.35rem;
+    font-size: 2.05rem;
+  }
+
+  .profile-section {
+    overflow: hidden;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .profile-section h2 {
+    max-width: 11ch;
+  }
+
+  .profile-copy p {
+    max-width: 30ch;
+    font-size: 1.08rem;
   }
 
   .hero-lede {
@@ -602,6 +739,16 @@ footer {
 
   .hero .eyebrow {
     max-width: 30ch;
+  }
+
+  .signal-card p {
+    font-size: 1.28rem;
+    overflow-wrap: anywhere;
+  }
+
+  .terminal-card pre {
+    padding: 18px;
+    font-size: 0.76rem;
   }
 
   .button,
@@ -615,9 +762,11 @@ footer {
   }
 
   .hero-panel img,
-  .panel-card {
-    width: 100%;
-    max-width: 100%;
+  .panel-card,
+  .signal-card,
+  .terminal-card {
+    width: calc(100vw - 96px);
+    max-width: calc(100vw - 96px);
   }
 
   .hero-panel img {

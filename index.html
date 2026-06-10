@@ -17,8 +17,10 @@
       <span>Kevin Shao</span>
     </a>
     <nav class="nav-links" aria-label="Page sections">
+      <a href="#profile">Profile</a>
       <a href="#work">Work</a>
       <a href="#teaching">Teaching</a>
+      <a href="#skills">Skills</a>
       <a href="#research">Research</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -40,14 +42,36 @@
       </div>
 
       <aside class="hero-panel" aria-label="Kevin Shao profile snapshot">
-        <img src="assets/kevin-shao-visual.png" alt="Illustrated workspace with code, classroom notes, and data charts">
-        <div class="panel-card">
-          <span class="metric">2025-Present</span>
-          <span>Computer Science Teacher, Shenzhen</span>
+        <div class="signal-card">
+          <span class="metric">Portfolio Signal</span>
+          <p>Teaching, data science, and algorithmic thinking in one practice.</p>
+        </div>
+        <div class="terminal-card" aria-label="Portfolio summary">
+          <div class="terminal-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <pre><code>kevin.profile = {
+  role: "CS Teacher",
+  degree: "M.S. Data Science",
+  method: "explain -> code -> test",
+  focus: [
+    "Python",
+    "C++",
+    "Algorithms",
+    "Data"
+  ],
+  language: ["English", "Chinese"]
+}</code></pre>
         </div>
         <div class="panel-card">
-          <span class="metric">M.S.</span>
-          <span>Data Science, Northeastern University</span>
+          <span class="metric">Current</span>
+          <span>Computer Science Teacher · Shenzhen</span>
+        </div>
+        <div class="panel-card">
+          <span class="metric">Academic Base</span>
+          <span>M.S. Data Science · Northeastern University</span>
         </div>
       </aside>
     </section>
@@ -64,6 +88,27 @@
       <div>
         <strong>Research mindset</strong>
         <span>Published COVID-19 modeling and public-health analytics work</span>
+      </div>
+    </section>
+
+    <section class="profile-section" id="profile">
+      <div>
+        <p class="eyebrow">Profile</p>
+        <h2>I bridge teaching, data science, and algorithmic thinking.</h2>
+      </div>
+      <div class="profile-copy">
+        <p>
+          I am a computer science educator with a data science background. My work sits at the
+          intersection of classroom teaching, analytical reasoning, and practical programming.
+          I like helping students move from confusion to structure: first by making the idea
+          visible, then by turning it into code, and finally by testing it against real examples.
+        </p>
+        <p>
+          Before teaching full time, I worked with reliability engineering, public-health data,
+          geospatial analysis, and statistical consulting. That experience shapes how I teach:
+          I treat computer science as a way to model problems, inspect evidence, and build
+          disciplined habits of thinking.
+        </p>
       </div>
     </section>
 
@@ -108,14 +153,33 @@
 
     <section class="teaching-band" id="teaching">
       <div>
-        <p class="eyebrow">Teaching Philosophy</p>
-        <h2>Make difficult ideas feel usable.</h2>
+        <p class="eyebrow">Teaching Portfolio</p>
+        <h2>Make difficult ideas feel usable, testable, and explainable.</h2>
       </div>
-      <p>
-        My classroom style connects formal computer science to concrete practice:
-        students write code, explain logic, test assumptions, and learn to see algorithms
-        as tools for thinking rather than isolated exam topics.
-      </p>
+      <div class="teaching-copy">
+        <p>
+          My classroom style connects formal computer science to concrete practice.
+          Students write code, explain logic, test assumptions, and learn to see algorithms
+          as tools for thinking rather than isolated exam topics.
+        </p>
+        <div class="method-grid" aria-label="Teaching method">
+          <article>
+            <span>01</span>
+            <h3>Start With Intuition</h3>
+            <p>Build the mental picture before the notation, syntax, or exam language appears.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Move To Code</h3>
+            <p>Translate ideas into Python, C++, traces, tables, and small working examples.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Test The Thinking</h3>
+            <p>Use edge cases, debugging, and explanation to make understanding durable.</p>
+          </article>
+        </div>
+      </div>
       <div class="chips" aria-label="Teaching focus areas">
         <span>Python</span>
         <span>C++</span>
@@ -126,20 +190,55 @@
       </div>
     </section>
 
+    <section class="section-grid skills-section" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">Skills Matrix</p>
+        <h2>A practical mix of classroom craft and technical depth.</h2>
+      </div>
+      <div class="skills-matrix">
+        <article>
+          <h3>Teaching</h3>
+          <p>Cambridge Computer Science, IGCSE curriculum, assessment design, bilingual explanation, student mentoring.</p>
+        </article>
+        <article>
+          <h3>Programming</h3>
+          <p>Python, C++, JavaScript, SQL, R, LaTeX, practical debugging, computational problem solving.</p>
+        </article>
+        <article>
+          <h3>Data</h3>
+          <p>Pandas, NumPy, statistical modeling, reliability analysis, Tableau, JMP, analytical reporting.</p>
+        </article>
+        <article>
+          <h3>Research</h3>
+          <p>Public-health datasets, longitudinal modeling, survival analysis, data cleaning, evidence-based writing.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section-grid research" id="research">
       <div class="section-heading">
         <p class="eyebrow">Research & Publications</p>
-        <h2>Evidence-driven work with real-world stakes.</h2>
+        <h2>Evidence-driven writing with real-world stakes.</h2>
       </div>
       <div class="publication-list">
         <article>
+          <span class="date">2024 · Public Health Modeling</span>
           <h3>A Longitudinal Mixed Effects Model for Mortality Trends During Vaccine Rollout</h3>
-          <p>Published research applying statistical modeling to public-health outcomes.</p>
+          <p>
+            Published research applying longitudinal mixed-effects modeling to mortality trends
+            during vaccine rollout. The work reflects my interest in using statistical methods to
+            study complicated public-health questions over time.
+          </p>
           <a href="https://www.sciencedirect.com/science/article/pii/S2772442524000492" target="_blank" rel="noreferrer">Read publication</a>
         </article>
         <article>
+          <span class="date">2023 · Data-Driven Comparison</span>
           <h3>Comparing the Impact of COVID-19 on Three States: A Data-Driven Approach</h3>
-          <p>Data science research comparing pandemic effects across regional contexts.</p>
+          <p>
+            Published data science research comparing pandemic effects across three regional
+            contexts. The project strengthened my practice in data cleaning, comparison design,
+            statistical interpretation, and clear technical communication.
+          </p>
           <a href="https://www.inderscience.com/info/inarticle.php?artid=139707" target="_blank" rel="noreferrer">Read publication</a>
         </article>
       </div>
